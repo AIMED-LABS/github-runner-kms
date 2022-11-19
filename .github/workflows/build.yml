@@ -41,6 +41,5 @@ jobs:
           push: true
           tags: |
             ghcr.io/aimed-labs/github-runner-kms
-            aimed-labs/github-runner-kms
           cache-from: type=gha
           cache-to: type=gha,mode=max
