@@ -30,7 +30,7 @@ jobs:
           path: /tmp/.buildx-cache
           key: ${{ runner.os }}-buildx-${{ github.sha }}
           restore-keys: |
-            ${{ runner.os }}-buildx
+            ${{ runner.os }}-buildx-
 
       - name: Build and push ARM64 Version
         uses: docker/build-push-action@v2
@@ -42,7 +42,6 @@ jobs:
           tags: |
             ghcr.io/aimed-labs/github-runner-kms
             aimed-labs/github-runner-kms
-
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
           
